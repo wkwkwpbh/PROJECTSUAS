@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tata Cara Peminjaman Buku</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e3f2fd, #5257f1);
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0396ff;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    header .logo img {
+      margin-right: 10px;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+
+    header nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    header nav ul li {
+      margin: 0 10px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .step-card {
+      flex: 1 1 calc(33.333% - 20px);
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .step-card img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+    }
+
+    .step-card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .step-card p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      background: linear-gradient(135deg, #e3f2fd, #5257f1);
+      color: white;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .steps {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .step-card {
+        flex: 1 1 100%;
+      }
+
+      header nav ul {
+        justify-content: center;
+        width: 100%;
+      }
+
+      header nav ul li {
+        margin: 5px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header .logo img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .step-card h3 {
+        font-size: 16px;
+      }
+
+      .step-card p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="Logo Perpustakaan">
+      <h1>Easy-Book</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="beranda.html">Beranda</a></li>
+        <li><a href="transaksi.html">Transaksi</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="index.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="title">
+      <h2>Langkah-Langkah Peminjaman Buku</h2>
+      <p>Ikuti panduan di bawah ini untuk mulai meminjam buku</p>
+    </div>
+
+    <div class="steps">
+      <div class="step-card">
+        <img src="https://via.placeholder.com/100" alt="Langkah 1">
+        <h3>1. Registrasi Akun</h3>
+        <p>Daftarkan akun Anda di website kami dengan mengisi formulir pendaftaran.</p>
+      </div>
+      <div class="step-card">
+        <img src="https://via.placeholder.com/100" alt="Langkah 2">
+        <h3>2. Login ke Akun</h3>
+        <p>Masuk ke akun Anda menggunakan username dan password yang telah dibuat.</p>
+      </div>
+      <div class="step-card">
+        <img src="https://via.placeholder.com/100" alt="Langkah 3">
+        <h3>3. Cari Buku</h3>
+        <p>Gunakan fitur pencarian untuk menemukan buku yang ingin Anda pinjam.</p>
+      </div>
+      
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Easy-Book.Projects.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peminjaman Buku Perpustakaan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0396ff;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    header .logo img {
+      margin-right: 10px;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+
+    header nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    header nav ul li {
+      margin: 0 10px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.transaction-form, .history {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+    </style>
+<header>
+    <div class="logo">
+      <img src="logo.jpg" alt="Logo Perpustakaan">
+      <h1>Easy-Book</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="beranda.html">Beranda</a></li>
+        <li><a href="transaksi.html">Transaksi</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="index.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+    <div class="container">
+        <h1>Peminjaman Buku Perpustakaan</h1>
+
+        <div class="transaction-form">
+            <h2>Pinjam Buku</h2>
+            <form id="borrowForm">
+                <label for="memberName">Nama Anggota:</label>
+                <input type="text" id="memberName" name="memberName" required>
+
+                <label for="bookTitle">Judul Buku:</label>
+                <input type="text" id="bookTitle" name="bookTitle" required>
+
+                <label for="borrowDate">Tanggal Pinjam:</label>
+                <input type="date" id="borrowDate" name="borrowDate" required>
+
+                <button type="submit">Pinjam</button>
+            </form>
+        </div>
+
+        <div class="history">
+            <h2>Riwayat Peminjaman</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama Anggota</th>
+                        <th>Judul Buku</th>
+                        <th>Tanggal Pinjam</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTable">
+                    <!-- Riwayat peminjaman akan ditambahkan di sini -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('borrowForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const memberName = document.getElementById('memberName').value;
+            const bookTitle = document.getElementById('bookTitle').value;
+            const borrowDate = document.getElementById('borrowDate').value;
+
+            const historyTable = document.getElementById('historyTable');
+
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${memberName}</td>
+                <td>${bookTitle}</td>
+                <td>${borrowDate}</td>
+            `;
+
+            historyTable.appendChild(newRow);
+
+            // Bersihkan form
+            document.getElementById('borrowForm').reset();
+        });
+    </script>
+</body>
+</html>
